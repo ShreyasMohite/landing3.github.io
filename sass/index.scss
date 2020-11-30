@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import "var";
+@import "mixin";
+.yellow-top-border {
+    padding: 1.5rem;
+    background-color: $yellow-top-border-background;
+    width: auto;
+}
+
+.top-heading {
+    @include flex-center;
+    margin: 3rem 0rem;
+    .heading {
+        display: flex;
+        text-align: center;
+        font-size: 1.3rem;
+        margin: 0.9rem 0rem;
+    }
+    .heading-para {
+        width: 40rem;
+        text-align: center;
+    }
+    p {
+        padding-top: 1rem;
+        text-align: center;
+    }
+}
+
+.circles-img {
+    @include flex-evenly;
+    outline: none;
+    margin: 5rem 0rem;
+    .circles {
+        p {
+            width: 8.8rem;
+            text-align: center;
+        }
+        img {
+            width: 8rem;
+            height: 8rem;
+            background-color: $img-background;
+            border: 5px solid $img-border;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 2s ease-in-out;
+            &:hover {
+                outline: none;
+                transform: rotate(-360deg);
+                transition: 3.3s ease;
+                box-shadow: 0 0 52rem $img-hover;
+            }
+        }
+    }
+}
+
+.black-background {
+    background-color: $black-background;
+    height: auto;
+    padding: 5rem;
+    .heading {
+        h2 {
+            text-align: center;
+            color: $h2-color;
+            padding-top: 2rem;
+            font-size: 2rem;
+        }
+        p {
+            color: $p-color;
+            text-align: center;
+            padding-top: 0.8rem;
+        }
+    }
+    .inputs-one {
+        @include flex-evenly;
+        margin-top: 2rem;
+        .first {
+            label {
+                font-size: 1.3rem;
+                color: $label-color;
+            }
+            input[type="text"] {
+                width: 25rem;
+                padding: 0.8rem;
+                font-size: 1rem;
+            }
+        }
+        .second {
+            @extend .first;
+        }
+    }
+    .inputs-two {
+        @extend .inputs-one;
+    }
+    .button {
+        @include flex-center;
+        margin-top: 4rem;
+        button {
+            font-size: 1rem;
+            padding: 1rem;
+            width: 11rem;
+            text-align: center;
+            cursor: pointer;
+            background-color: $button-background;
+            border: none;
+            font-weight: 600;
+        }
+        p {
+            color: $p-color;
+            padding-top: 1rem;
+        }
+    }
+}
+
+.background-yellow {
+    background-color: $yellow-background;
+    height: auto;
+    padding: 5rem;
+    .first-row {
+        padding-bottom: 1.5rem;
+        @include flex-evenly;
+        .content {
+            p {
+                width: 14rem;
+            }
+        }
+    }
+    .second-row {
+        @extend .first-row;
+    }
+}
+
+.white-section {
+    padding: 3.5rem;
+    h4 {
+        text-align: center;
+        font-size: 2rem;
+    }
+    .brands-name {
+        @include flex-evenly;
+        .circles {
+            padding: 3rem;
+            img {
+                padding: 1rem;
+                width: 8rem;
+                height: 8rem;
+                background-color: $img-background;
+                border: 5px solid $img-border;
+                border-radius: 50%;
+                cursor: pointer;
+                transition: 2s ease-in-out;
+                &:hover {
+                    outline: none;
+                    transform: rotate(-360deg);
+                    transition: 3.3s ease;
+                    box-shadow: 0 0 52rem $img-hover;
+                }
+            }
+        }
+    }
+}
+
+.section-gray {
+    height: auto;
+    padding: 3rem;
+    background-color: $gray-background;
+    .question {
+        h4 {
+            font-size: 2rem;
+            padding: 1rem;
+        }
+    }
+    .footer {
+        @include flex-start;
+        .section-ul {
+            padding: 2rem;
+            h5 {
+                font-size: 1.2rem;
+            }
+            li {
+                padding: 0.2rem;
+                list-style-type: none;
+            }
+        }
+    }
+}
+
+@media (max-width:800px) {
+    .top-heading {
+        .heading-para {
+            width: 22rem;
+        }
+    }
+    .circles-img {
+        flex-direction: column;
+        .circles {
+            margin-top: 1.4rem;
+        }
+    }
+    .black-background {
+        height: auto;
+        .inputs-one {
+            flex-direction: column;
+            .first {
+                input[type="text"] {
+                    width: 20rem;
+                    padding: 0.8rem;
+                    font-size: 1rem;
+                    margin: 1rem 0rem;
+                }
+            }
+        }
+    }
+    .inputs-two {
+        flex-direction: column;
+    }
+    .button {
+        padding-bottom: 4rem;
+    }
+    .background-yellow {
+        height: 130vh;
+        .first-row {
+            flex-direction: column;
+            .content {
+                padding: 1rem 0rem;
+            }
+        }
+    }
+    .brands-name {
+        flex-direction: column;
+    }
+    .footer {
+        flex-wrap: wrap;
+    }
+}
